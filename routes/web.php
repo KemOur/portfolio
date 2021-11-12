@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome');});
+
+//Route::get('/welcome/frontend', [\App\Http\Controllers\Frontend::class, 'index']);
+
+Route::get('/frontend', function () { return view('front');});
+Route::get('/backend', function () { return view('back');});
+Route::get('/mobile', function () { return view('mobile');});
+
+
+/*------------- ADMIN --------------*/
+
+//Route::get('/dashboard/admin', [\App\Http\Controllers\AdminController::class, 'index'])->middleware('auth')->name('admin.dashboard');
+Route::get('/admin/dashboard', [\App\Http\Controllers\AdminController::class, 'index']);
